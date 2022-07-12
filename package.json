@@ -1,0 +1,41 @@
+{
+  "name": "react.gracestack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format:write": "prettier --write .",
+    "dev:webpack": "webpack serve",
+    "dev": "run-p dev:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/user1910524aaaa/react.gracestack.git"
+  },
+  "author": "Paul Filip",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/user1910524aaaa/react.gracestack/issues"
+  },
+  "homepage": "https://github.com/user1910524aaaa/react.gracestack#readme",
+  "devDependencies": {
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@webpack-cli/serve": "^1.7.0",
+    "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.7.1",
+    "ts-loader": "^9.3.1",
+    "typescript": "^4.7.4",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.3",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
