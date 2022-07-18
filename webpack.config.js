@@ -3,13 +3,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
-  mode: 'none',
-  entry: path.join(__dirname, 'src', 'index.tsx'),
+  mode: 'development',
+  entry: './src/index.tsx',
   target: 'web',
-  externals: nodeExternals(),
+  // externals: nodeExternals(),
   resolve: {
     modules: ['node_modules'],
-    extensions: ['.ts', '.tsx', '.js', 'jsx'],
+    extensions: ['.tsx', '.ts', '.js'],
   },
   module: {
     rules: [
@@ -20,21 +20,26 @@ module.exports = {
       },
       {
         test: /\.css?$/,
-        use: 'css-loader',
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
         exclude: /node_modules/,
+      },
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
       },
     ],
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.join(__dirname, './build'),
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, './index.html'),
+      template: path.join(__dirname, './src/index.html'),
+      title: 'Hot Module Replacement',
     }),
   ],
-  devServer: {
-    static: './dist',
-  },
+  // devServer: {
+  //   static: './build',
+  // },
 };

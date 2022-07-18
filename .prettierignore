@@ -1,0 +1,9 @@
+/public/build
+
+.cache
+.env
+
+/build/
+/public/build
+/app/tailwind.css
+
