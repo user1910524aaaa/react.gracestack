@@ -1,15 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const nodeExternals = require('webpack-node-externals');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
   entry: './src/index.tsx',
   target: 'web',
-  // externals: nodeExternals(),
   resolve: {
     modules: ['node_modules'],
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.tsx', '.ts', '.js', 'jsx'],
   },
   module: {
     rules: [
@@ -38,8 +37,8 @@ module.exports = {
       template: path.join(__dirname, './src/index.html'),
       title: 'Hot Module Replacement',
     }),
+    new CopyWebpackPlugin({
+      patterns: [{ from: './src/public/', to: './' }],
+    }),
   ],
-  // devServer: {
-  //   static: './build',
-  // },
 };
