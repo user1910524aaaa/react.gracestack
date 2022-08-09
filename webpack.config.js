@@ -6,7 +6,6 @@ module.exports = {
   mode: 'development',
   entry: './src/index.tsx',
   target: 'web',
-  // externals: nodeExternals(),
   resolve: {
     modules: ['node_modules'],
     extensions: ['.tsx', '.ts', '.js', 'jsx'],
